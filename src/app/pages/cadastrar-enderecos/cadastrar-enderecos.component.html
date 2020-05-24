@@ -1,0 +1,10 @@
+<form #formCadastroEndereco="ngForm" (ngSubmit)="onSubmit(formCadastroEndereco)">
+    <h3>CadastroEndereço:</h3>
+    <input type="text" [(ngModel)]="endereco.Estado" name="Estado" placeholder="Estado">
+    <input type="text" [(ngModel)]="endereco.Cidade" name="Cidade" placeholder="Cidade">
+    <input type="text" [(ngModel)]="endereco.Bairro" name="Bairro" placeholder="Bairro">
+    <input type="text" [(ngModel)]="endereco.Rua" name="Rua" placeholder="Rua">
+    <input type="text" [(ngModel)]="endereco.Numero" name="Numero" placeholder="Numero">
+    <input type="text" [(ngModel)]="endereco.Complemento" name="Complemento" placeholder="Complemento">
+    <button type="submit">Cadastrar</button>
+</form>

@@ -1,0 +1,36 @@
+<section id="login">
+    <h1 class="text-center text-info pt-5">Events</h1><br>
+    <section class="container-fluid">
+        <section id="login-row" class="row justify-content-center align-items-center">
+            <section id="login-column" class="col-md-6">
+                <section id="login-box" class="col-md-12">
+
+                    <form id="login-form" class="form" #formLoginUsuario="ngForm"
+                        (ngSubmit)="onSubmit(formLoginUsuario)">
+                        <h6 class="text-center text-info">Login</h6>
+                        <section class="form-group">
+                            <label for="username" class="text-info">E-mail:</label>
+                            <input type="text" [(ngModel)]="usuario.Email" name="Email" id="Email" class="form-control"
+                                placeholder="Digite seu Email">
+                        </section>
+                        <section class="form-group">
+                            <label for="password" class="text-info">Senha:</label><br>
+                            <input type="password" [(ngModel)]="usuario.Senha" name="Senha" id="password"
+                                class="form-control">
+                        </section>
+
+                        <section class="form-group">
+                            <label for="remember-me" class="text-info"><span>Lembrar me</span> <span><input
+                                        id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Enviar">
+                        </section>
+
+                        <section id="register-link" class="text-right">
+                            <a routerLink="/cadastro" class="text-info">Cadastrar</a>
+                        </section>
+                    </form>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>

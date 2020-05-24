@@ -1,0 +1,11 @@
+<h3>Eventos: </h3>
+<div *ngFor="let evento of eventos">
+    <p>Nome: {{evento.Nome}}</p>
+    <p>Descrição: {{evento.Decricao}}</p>
+    <p>Data: {{evento.DataInicio}}</p>
+    <p>Hora inicial: {{evento.HoraInicio}}</p>
+    <p>Hora final: {{evento.HoraFinal}}</p>
+    <p>Vagas: {{evento.Vagas}}</p>
+    <p><button class="btn btn-lg btn-outline-primary" (click)="detalhes(evento.idEvento)">Ver mais</button>
+    <hr>
+</div>

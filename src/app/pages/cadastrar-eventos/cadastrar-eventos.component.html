@@ -1,0 +1,19 @@
+<div class="container">
+    <form #formCadastroEventos="ngForm" (ngSubmit)="onSubmit(formCadastroEventos)">
+        <h3>Cadastrar eventos:</h3>
+        <input type="text" [(ngModel)]="evento.Nome" name="Nome" placeholder="Nome">
+        <input type="text" [(ngModel)]="evento.Decricao" name="Decricao" placeholder="Descricao">
+        <input type="date" [(ngModel)]="evento.DataInicio" name="DataInicio" placeholder="DataInicio">
+        <input type="time" [(ngModel)]="evento.HoraInicio" name="HoraInicio" placeholder="HoraInicio">
+        <input type="time" [(ngModel)]="evento.HoraFinal" name="HoraFinal" placeholder="HoraFinal">
+        <input type="number" [(ngModel)]="evento.Vagas" name="Vagas" placeholder="Vagas">
+        <select id="idEndereco" name="Endereco_idEndereco" [(ngModel)]="evento.Endereco_idEndereco">
+            <option value="" selected>Selecionar...</option>
+            <option *ngFor="let endereco of enderecos" [value]='endereco.idEndereco'>
+                {{endereco.idEndereco}}: {{endereco.Estado}} - {{endereco.Cidade}} - {{endereco.Bairro}} -
+                {{endereco.Rua}} - {{endereco.Numero}}
+            </option>
+        </select>
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>

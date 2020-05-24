@@ -1,0 +1,57 @@
+<div class="container">
+    <h3>Endereços: </h3>
+    <div *ngFor="let endereco of enderecos">
+        <p>ID: {{endereco.idEndereco}}</p>
+        <p>Estado: {{endereco.Estado}}</p>
+        <p>Cidade: {{endereco.Cidade}}</p>
+        <p>Bairro: {{endereco.Bairro}}</p>
+        <p>Rua: {{endereco.Rua}}</p>
+        <p>Numero: {{endereco.Numero}}</p>
+        <p>Complemento: {{endereco.Complemento}}</p>
+        <p><button class="btn btn-lg btn-outline-warning" (click)="open(alterar,endereco )">Alterar</button>
+        </p>
+        <p><button class="btn btn-lg btn-outline-danger" (click)="open(deletar,endereco )">Deletar</button>
+        </p>
+        <hr>
+    </div>
+</div>
+
+<ng-template #alterar let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Alterar Endereço:</h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form #formAtulizarEndereco="ngForm" (ngSubmit)="onSubmit(formAtulizarEndereco)">
+        <div class="modal-body">
+            <input type="text" [(ngModel)]="alterEndereco.Estado" name="Estado" placeholder="Estado">
+            <input type="text" [(ngModel)]="alterEndereco.Cidade" name="Cidade" placeholder="Cidade">
+            <input type="text" [(ngModel)]="alterEndereco.Bairro" name="Bairro" placeholder="Bairro">
+            <input type="text" [(ngModel)]="alterEndereco.Rua" name="Rua" placeholder="Rua">
+            <input type="text" [(ngModel)]="alterEndereco.Numero" name="Numero" placeholder="Numero">
+            <input type="text" [(ngModel)]="alterEndereco.Complemento" name="Complemento" placeholder="Complemento">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark"
+                (click)="close()">Cancelar</button>
+            <button type="submit" class="btn btn-outline-dark">Confirmar</button>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #deletar let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Deletar endereço: </h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Tem cereteza que deseja deletar este endereço?
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="close()">Cancelar</button>
+        <button type="button" class="btn btn-outline-dark" (click)="delete()">Confirmar</button>
+    </div>
+</ng-template>
